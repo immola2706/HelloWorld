@@ -35,11 +35,12 @@ pipeline {
             }
         }
 
-/*      stage('Deployment Stage - Tomcat Container') {
+        stage('Deployment Stage - Tomcat Container') {
             steps {
-                deploy adapters: [tomcat8(credentialsId: 'f5c26087-bdee-4306-967a-6ae8eeec19d0', path: '', url: 'http://3.83.255.30:8080')], contextPath: 'mvn-hello-world', war: 'target/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'cfd6a370-aa88-4ce8-8341-54fe37eab136', path: '', url: 'http://18.218.95.134:9090/')], contextPath: mvn-hello-world, *.war: 'target/*.war'
             }
-        }  */
+        }
+        
         stage ('Creating AWS S3 Bucket for storing Terraform State') {
             steps {
                 sh 'aws s3api create-bucket --bucket bucket-tf-state-49473 --region us-east-1'
