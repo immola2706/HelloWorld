@@ -43,7 +43,7 @@ pipeline {
         
         stage ('Creating AWS S3 Bucket for storing Terraform State') {
             steps {
-                sh 'aws s3api create-bucket --bucket bucket-tf-state-49473 --region us-east-1'
+                sh 'aws s3api create-bucket --bucket bucket-tf-state-49473 --region us-east-2'
                     
                 }              
         }
